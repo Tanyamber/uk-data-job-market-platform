@@ -1,0 +1,30 @@
+name: 'uk_market_transform'
+version: '1.0.0'
+config-version: 2
+
+# Connects this project directory to your secure BigQuery keys profile
+profile: 'uk_market_transform'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Defining your production data layer compilation logic
+models:
+  uk_market_transform:
+    # Staging files are views (virtual shortcuts over raw data)
+    staging:
+      +materialized: view
+    # Intermediate models handle extraction processing steps
+    intermediate:
+      +materialized: view
+    # Mart tables are physically frozen as high-performance structures for Power BI
+    marts:
+      +materialized: table

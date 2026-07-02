@@ -1,0 +1,24 @@
+# Local Environment Configuration Files
+.env
+config.py
+
+# Google Cloud IAM Security Keys
+*.json
+
+# Python Virtual Environments & Caches
+__pycache__/
+*.pyc
+venv/
+.venv/
+env/
+.prefect/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+
+# Ignore dbt local target compilations and logs
+dbt/uk_market_transform/target/
+dbt/uk_market_transform/dbt_packages/
+dbt/uk_market_transform/logs/

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_market_intelligence  # The exact dataset name inside Google BigQuery
+    description: "The raw ingestion landing zone populated daily by the Prefect API pipeline."
+    tables:
+      - name: raw_jobs             # The raw table holding our streaming records
+        description: "Raw aggregated job postings harvested from Adzuna UK."
